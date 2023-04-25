@@ -78,7 +78,11 @@ plt.imshow(edges1)
 ```
 ## Output :
 
-### Input image and grayscale image:
+### Input image :
+
+![OUTPUT](./taylor.webp)
+
+### Grayscale image:
 
 ![OUTPUT](./t1.png)
 
