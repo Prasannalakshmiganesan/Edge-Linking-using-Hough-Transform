@@ -7,67 +7,89 @@ Anaconda - Python 3.7
 
 ## Algorithm:
 ### Step1:
-<br>
+Import all the necessary modules for the program.
 
 ### Step2:
-<br>
+Load a image using imread() from cv2 module.
 
 ### Step3:
-<br>
+Convert the image to grayscale.
 
 ### Step4:
-<br>
+Using the Canny operator from cv2, detect the edges of the images.
 
 ### Step5:
-<br>
+Using the houghlinesP(), detect the line co-ordinates for every points in the images. Using for loop, draw the lines on the found co-ordinates.
+Display the image.
 
 
 ## Program:
+
+## Read image and convert it to grayscale image
 ```Python
+## Developed by : Prasannalakshmi G
+## Reg no : 2122240075
 
-# Read image and convert it to grayscale image
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+image1=cv2.imread('cat.jpg',0)
+img= cv2.GaussianBlur(image1,(3,3),0)
+plt.imshow(img)
+```
+
+## Find the edges in the image using canny detector and display
+```Python
+## Developed by : Prasannalakshmi G
+## Reg no : 2122240075
+
+edges1 = cv2.Canny(img,100,200)
+plt.imshow(edges1,cmap = 'gray')
+plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
+plt.show()
+```
 
 
+## Detect points that form a line using HoughLinesP
+```Python
+## Developed by : Prasannalakshmi G
+## Reg no : 2122240075
 
-# Find the edges in the image using canny detector and display
+lines=cv2.HoughLinesP(edges1,1,np.pi/180, threshold=80, minLineLength=50,maxLineGap=250)
+```
 
+## Draw lines on the image
+```Python
+## Developed by : Prasannalakshmi G
+## Reg no : 2122240075
 
+for line in lines:
+    x1, y1, x2, y2 = line [0] 
+    cv2.line(edges1,(x1, y1),(x2, y2),(255,0,0),3)
+```
 
-# Detect points that form a line using HoughLinesP
+## Display the result
+```Python
+## Developed by : Prasannalakshmi G
+## Reg no : 2122240075
 
-
-
-# Draw lines on the image
-
-
-
-# Display the result
-
-
-
+plt.imshow(edges1)
 
 ```
-## Output
+## Output :
 
-### Input image and grayscale image
-<br>
-<br>
-<br>
-<br>
+### Input image and grayscale image:
 
-### Canny Edge detector output
-<br>
-<br>
-<br>
-<br>
+![OUTPUT](./t1.png)
+
+### Canny Edge detector output :
+
+![OUTPUT](./t2.png)
 
 
-### Display the result of Hough transform
-<br>
-<br>
-<br>
-<br>
+### Display the result of Hough transform :
 
+![OUTPUT](./t3.png)
 
 
 ## Result:
