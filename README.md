@@ -28,7 +28,7 @@ Display the image.
 ## Read image and convert it to grayscale image
 ```Python
 ## Developed by : Prasannalakshmi G
-## Reg no : 2122240075
+## Reg no : 212222240075
 
 import cv2
 import numpy as np
@@ -41,7 +41,7 @@ plt.imshow(img)
 ## Find the edges in the image using canny detector and display
 ```Python
 ## Developed by : Prasannalakshmi G
-## Reg no : 2122240075
+## Reg no : 212222240075
 
 edges1 = cv2.Canny(img,100,200)
 plt.imshow(edges1,cmap = 'gray')
@@ -53,7 +53,7 @@ plt.show()
 ## Detect points that form a line using HoughLinesP
 ```Python
 ## Developed by : Prasannalakshmi G
-## Reg no : 2122240075
+## Reg no : 212222240075
 
 lines=cv2.HoughLinesP(edges1,1,np.pi/180, threshold=80, minLineLength=50,maxLineGap=250)
 ```
@@ -61,7 +61,7 @@ lines=cv2.HoughLinesP(edges1,1,np.pi/180, threshold=80, minLineLength=50,maxLine
 ## Draw lines on the image
 ```Python
 ## Developed by : Prasannalakshmi G
-## Reg no : 2122240075
+## Reg no : 212222240075
 
 for line in lines:
     x1, y1, x2, y2 = line [0] 
@@ -71,7 +71,7 @@ for line in lines:
 ## Display the result
 ```Python
 ## Developed by : Prasannalakshmi G
-## Reg no : 2122240075
+## Reg no : 212222240075
 
 plt.imshow(edges1)
 
